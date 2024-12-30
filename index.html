@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant CV - Your Professional Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-file-alt"></i> Instant CV - Your Professional Journey</h1>
+        <nav>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+            <a href="#skills"><i class="fas fa-chart-bar"></i> Skills</a>
+            <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+            <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#resume"><i class="fas fa-file-download"></i> Resume</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <form id="profileForm">
+                <textarea id="profileSummary" placeholder="Write your professional journey..." rows="5"></textarea>
+                <input type="file" id="profilePhoto" accept="image/*">
+                <button type="button" onclick="saveProfile()"><i class="fas fa-save"></i> Save Profile</button>
+            </form>
+            <div id="profileDisplay">
+                <p id="summaryDisplay"></p>
+                <img id="photoDisplay" src="" alt="Profile Photo" style="display: none;">
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <form id="skillForm">
+                <input type="text" id="skillName" placeholder="Skill (e.g., JavaScript)" required>
+                <select id="skillCategory">
+                    <option value="Technical">Technical</option>
+                    <option value="Soft Skill">Soft Skill</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="number" id="skillLevel" placeholder="Proficiency (1-100%)" required>
+                <button type="button" onclick="addSkill()"><i class="fas fa-plus"></i> Add Skill</button>
+            </form>
+            <div id="skillsContainer"></div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <form id="educationForm">
+                <input type="text" id="eduInstitute" placeholder="Institute Name" required>
+                <input type="text" id="eduDegree" placeholder="Degree (e.g., B.Sc. Computer Science)" required>
+                <input type="text" id="eduYear" placeholder="Year of Graduation (e.g., 2023)" required>
+                <button type="button" onclick="addEducation()"><i class="fas fa-plus"></i> Add Education</button>
+            </form>
+            <div id="educationContainer"></div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <form id="experienceForm">
+                <input type="text" id="expTitle" placeholder="Job Title (e.g., Software Engineer)" required>
+                <input type="text" id="expCompany" placeholder="Company Name" required>
+                <textarea id="expDetails" placeholder="Describe your role and achievements..." required></textarea>
+                <input type="text" id="expDuration" placeholder="Duration (e.g., Jan 2020 - Dec 2023)" required>
+                <button type="button" onclick="addExperience()"><i class="fas fa-plus"></i> Add Experience</button>
+            </form>
+            <div id="experienceContainer"></div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <form id="contactForm">
+                <input type="text" id="contactName" placeholder="Full Name" required>
+                <input type="email" id="contactEmail" placeholder="Email Address" required>
+                <input type="text" id="contactPhone" placeholder="Phone Number">
+                <input type="url" id="contactLinkedIn" placeholder="LinkedIn URL">
+                <input type="url" id="contactGitHub" placeholder="GitHub URL">
+                <button type="button" onclick="saveContact()"><i class="fas fa-save"></i> Save Contact</button>
+            </form>
+            <div id="contactDisplay"></div>
+        </section>
+
+        <section id="resume">
+            <h2>Generate Resume</h2>
+            <form id="resumeOptions">
+                <label for="templateStyle">Choose Template:</label>
+                <select id="templateStyle">
+                    <option value="premium">Premium</option>
+                    <option value="modern">Modern</option>
+                    <option value="minimal">Minimal</option>
+                </select>
+                <button type="button" onclick="generateResume()"><i class="fas fa-file-download"></i> Generate PDF</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Instant CV Generator | Crafted with <i class="fas fa-heart" style="color:yellow"></i> by Abdul Kalam Azad</p>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
